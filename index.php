@@ -135,5 +135,18 @@
   task7(-50,0);
   task('end');
 
+  task('start');
+  condition("Дано пятизначное число. Цифры на четных позициях «занулить».
+  Например, из 12345 получается число 10305.");
+  function task8($a){
+    $str = (string)$a;
+    for ($i = 1; $i < strlen($a); $i +=2) $str[$i] = '0';
+    add("Было: $a; стало: $str");
+  }
+  task8(12345);
+  task8(999999999);
+  task8(11111111111111111);
+  task('end');
+
   include('./src/footer.php');
 ?>
