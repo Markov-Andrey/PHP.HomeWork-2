@@ -122,10 +122,17 @@
   task('start');
   condition("Разработайте программу, которая из чисел 20 .. 45 находила те, которые
   делятся на 5 и найдите сумму этих чисел.");
-  $task7Num = [];
-  for($j = 20; $j <= 45; $j++) if ($j % 5 == 0) array_push($task7Num, $j);
-  var_dump($task7Num);
-  add("Сумма чисел: ".array_sum($task7Num));
+  function task7($a, $b){
+    $task7Num = [];
+    for($j = $a; $j <= $b; $j++) if ($j % 5 == 0) array_push($task7Num, $j);
+    add("Сумма чисел кратных 5 от $a до $b:");
+    add(array_sum($task7Num));
+    add('&nbsp;');
+  }
+  task7(20,45);
+  task7(0,50);
+  task7(-20,20);
+  task7(-50,0);
   task('end');
 
   include('./src/footer.php');
