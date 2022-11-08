@@ -16,20 +16,14 @@
   condition("Если переменная \$a пустая, то выведите 'Верно', иначе выведите 'Неверно'.
   Проверьте работу скрипта при \$a, равном 1, 3, -3, 0, null, true, '', '0'.");
   //функция проверки аргумента на его наличие
-  function trueFalse ($a) {
-    if (isset($a)):
-      add("$a - Верно");
-    else:
-      add("$a - Неверно");
-    endif;
-  }
-  trueFalse(1);
-  trueFalse(3);
-  trueFalse(-3);
-  trueFalse(null);
-  trueFalse(true);
-  trueFalse('');
-  trueFalse('0');
+  $trueFalse = fn($a) => isset($a) ? add("$a - Верно") : add("$a - Неверно");
+  $trueFalse(1);
+  $trueFalse(3);
+  $trueFalse(-3);
+  $trueFalse(null);
+  $trueFalse(true);
+  $trueFalse('');
+  $trueFalse('0');
   task('end');
   
   task('start');
